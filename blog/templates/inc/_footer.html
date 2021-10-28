@@ -1,0 +1,84 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="footer_widget text-center ">
+                                <h3 class="footer_title pos_margin">
+                                        New York
+                                </h3>
+                                <p>5th flora, 700/D kings road, <br>
+                                        green lane New York-1782 <br>
+                                        <a href="#">info@burger.com</a></p>
+                                <a class="number" href="#">+10 378 483 6782</a>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="footer_widget text-center ">
+                                <h3 class="footer_title pos_margin">
+                                    California
+                                </h3>
+                                <p>5th flora, 700/D kings road, <br>
+                                        green lane New York-1782 <br>
+                                        <a href="#">info@burger.com</a></p>
+                                <a class="number" href="#">+10 378 483 6782</a>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-12 col-lg-4">
+                                <div class="footer_widget">
+                                        <h3 class="footer_title">
+                                                Stay Connected
+                                        </h3>
+                                        <form action="#" class="newsletter_form">
+                                            <label>
+                                                <input type="text" placeholder="Enter your mail">
+                                            </label>
+                                            <button type="submit">Sign Up</button>
+                                        </form>
+                                        <p class="newsletter_text">Stay connect with us to get exclusive offer!</p>
+                                    </div>
+                        </div>
+                    </div>
+                     <div class="row justify-content-center">
+                        <div class="col-lg-4">
+
+                                   <div class="container" style="padding: 80px 0;" align="center">
+                                       <a href="#">
+                                <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                            </a>
+                            <a href="{% provider_login_url 'google' method='js_sdk' %}">
+                                <i class="fa fa-google fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                            </a>
+                                       <a href="{% provider_login_url 'facebook' method='js_sdk' %}">
+                                <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                            </a>
+                            <a href="{% url 'social:begin' 'github' %}">
+                                <i class="fa fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                            </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <p class="copy_right text-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>

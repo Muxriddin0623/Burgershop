@@ -1,0 +1,69 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                            <li><a class="active" href="{% url 'home' %}">home</a></li>
+                                            <li><a href="{% url 'menu' %}">Menu</a></li>
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'blog' %}">Blog</a>
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'img/logo.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="{% provider_login_url 'vk' method='js_sdk' %}">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% provider_login_url 'google' method='js_sdk' %}">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% provider_login_url 'facebook' method='js_sdk' %}">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'social:begin' 'github' %}">
+                                                <i class="fa fa-github"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                    <p style="color: #e0e0e0">Hi {{ user.get_username }}!<br><a href="{% url 'logout' %}">Logout</a></p>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="#">+10 367 453 7382</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

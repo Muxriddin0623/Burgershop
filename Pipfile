@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+fontawesome-free = "*"
+django-ckeditor = "*"
+django-recaptcha3 = "*"
+social-auth-app-django = "*"
+django-allauth = "==0.43.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

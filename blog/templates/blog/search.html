@@ -1,0 +1,80 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Search :: {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <div class="bradcam_area breadcam_bg">
+        <h3>blog</h3>
+    </div>
+    <!-- bradcam_area_end -->
+        <section class="blog-post-area">
+            <div class="container">
+            <div class="border-top" style="border-top: 1px solid silver"></div>
+                <div class="row">
+                    <div class="blog-post-area-style">
+
+                           {% for post in blogs %}
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" width="30%" src="{{ post.photo.url }}" alt="{{ post.title }}">
+                                <a href="#" class="blog_item_date">
+
+                                    <h3>{{ post.created_at|date:"j M Y" }}</h3>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="#">
+                                    <h2>{{ post.title }}</h2>
+                                </a>
+                                <ul>
+                                <p>{{ post.content|truncatewords_html:5|safe }}</p>
+                                </ul>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i>{{ post.category }}</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                                {% empty %}
+                                <br><h1>Sorry, no result were found for your query... :(</h1><br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        {% if page_obj.has_other_pages %}
+            <div class="pegination">
+                <div class="nav-links">
+
+                <nav aria-label="...">
+
+<nav aria-label="Page navigation example">
+<ul class="pagination">
+
+
+{% for p in page_obj.paginator.page_range %}
+      {% if page_obj.number == p %}
+          <li class="page-item active" aria-current="page"><a class="page-link">{{ p }}</a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="?{{ s }}page={{ p }}">{{ p }}</a></li>
+      {% endif %}
+{% endfor %}
+         {% if page_obj.has_next %}
+      <li class="page-item">
+      <a class="page-link" href="?{{ s }}page={{ page_obj.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+             </ul>
+             </nav>
+             {% endif %}
+                </nav>
+                </div>
+            </div>
+        {% endif %}
+        </section>
+{% endblock content %}
